@@ -6,7 +6,7 @@ before_install:
   - docker build -t geemike/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run geemike/react-test npm test -- --coverage
+  - docker run -e CI=true geemike/react-test npm test  
 
 after_success:
   - docker build -t geemike/multi-client ./client
