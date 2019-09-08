@@ -25,7 +25,7 @@ deploy:
   provider: elasticbeanstalk
   region: us-east-1
   app: effective-chainsaw
-  env: MultiDocker-env
+  env: EffectiveChainsaw-env
   bucket_name: elasticbeanstalk-us-east-1-101544221200
   bucket_path: docker-multi
   on:
