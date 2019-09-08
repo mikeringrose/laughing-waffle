@@ -20,7 +20,7 @@
     },
     {
       "name": "nginx",
-      "iamge": "geemike/multi-nginx",
+      "image": "geemike/multi-nginx",
       "essential": true,
       "portMappings": [
         {
