@@ -14,13 +14,19 @@ class Fib extends Component {
   }
 
   async fetchValues() {
-    const { data = [] } = await axios.get('/api/values/current')
-    this.setState({ values: data })
+    const { status, data = [] } = await axios.get('/api/values/current')
+
+    if (status >= 200 && status < 300) {
+      this.setState({ values: data })
+    }
   }
 
   async fetchIndexes() {
-    const { data } = await axios.get('/api/values/all')
-    this.setState({ seenIndexes: data })
+    const { status, data = [] } = await axios.get('/api/values/all')
+
+    if (status >= 200 && status < 300) {
+      this.setState({ seenIndexes: data })
+    }
   }
 
   handleSubmit = async (event) => {
