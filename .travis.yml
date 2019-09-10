@@ -16,10 +16,10 @@ after_success:
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-  - docker push geemike/multi-client 
-  - docker push geemike/multi-nginx
-  - docker push geemike/multi-server 
-  - docker push geemike/multi-worker 
+  - docker push geemike/multi-client:$TRAVIS_BUILD_NUMBER 
+  - docker push geemike/multi-nginx:$TRAVIS_BUILD_NUMBER 
+  - docker push geemike/multi-server:$TRAVIS_BUILD_NUMBER  
+  - docker push geemike/multi-worker:$TRAVIS_BUILD_NUMBER 
 
 #deploy:
 # provider: elasticbeanstalk
