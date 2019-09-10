@@ -9,10 +9,10 @@ script:
   - docker run -e CI=true geemike/react-test npm test  
 
 after_success:
-  - docker build -t geemike/multi-client ./client
-  - docker build -t geemike/multi-nginx ./nginx
-  - docker build -t geemike/multi-server ./server
-  - docker build -t geemike/multi-worker ./worker
+  - docker build -t geemike/multi-client:$TRAVIS_BUILD_NUMBER ./client
+  - docker build -t geemike/multi-nginx:$TRAVIS_BUILD_NUMBER ./nginx
+  - docker build -t geemike/multi-server:$TRAVIS_BUILD_NUMBER ./server
+  - docker build -t geemike/multi-worker:$TRAVIS_BUILD_NUMBER ./worker
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
