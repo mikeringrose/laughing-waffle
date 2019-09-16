@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  # number of pods to create
+  replicas: 3
+  # used to locate the pod after deployment, it will essentially match the labels in the metadata section
+  selector:
+    matchLabels:
+      component: web
+  template:
+    metadata:
+      labels:
+        component: web
+    spec:
+      containers:
+        - name: client
+          image: geemike/multi-client
+          ports:
+            - containerPort: 3000
