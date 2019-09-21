@@ -12,5 +12,5 @@ docker push geemike/multi-worker:$SHA
 
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=geemike/multi-server:$SHA
-kubectl set image deployments/client-depoloyment client=geemike/multi-client:$SHA
+kubectl set image deployments/client-deployment client=geemike/multi-client:$SHA
 kubectl set image deployments/worker-deployment worker=geemike/multi-worker:$SHA
