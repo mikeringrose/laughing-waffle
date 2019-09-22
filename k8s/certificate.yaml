@@ -11,3 +11,10 @@ spec:
   dnsNames:
     - k8s.mikeringrose.com
     - www.k8.mikeringrose.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - k8s.mikeringrose.com
+          - www.k8s.mikeringrose.com
