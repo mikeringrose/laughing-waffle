@@ -10,7 +10,7 @@ spec:
   commonName: k8s.mikeringrose.com
   dnsNames:
     - k8s.mikeringrose.com
-    - www.k8.mikeringrose.com
+    - www.k8s.mikeringrose.com
   acme:
     config:
       - http01:
